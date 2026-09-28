@@ -16,8 +16,9 @@ profile:
   name: Tom Gilbert
   tagline: Works Director
   # DELIBERATELY NOT A PHOTOGRAPH. Tom does not want his likeness published, so
-  # the avatar is the CWT Group mark on a white square. The mark alone, without
-  # the "Precision Welding Services" line — the avatar renders at 96px, where
+  # the avatar is the CWT Group mark on a white square, cut from the master
+  # artwork "CWT Logo final Feb2025-01 main.png" (3508x1241). The mark alone,
+  # without the "Precision Welding Services" line — it renders at 96px, where
   # that strapline is an unreadable smudge and dropping it lets the wordmark
   # itself sit ~10% larger. The avatar renders in a circle (object-cover), so
   # the mark is inset with 29px of clearance at 400x400 — it cannot be clipped.
