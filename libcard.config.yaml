@@ -16,12 +16,15 @@ profile:
   name: Tom Gilbert
   tagline: Works Director
   # DELIBERATELY NOT A PHOTOGRAPH. Tom does not want his likeness published, so
-  # the avatar is the CWT Group logo on a white square. The avatar renders in a
-  # circle (object-cover), so the mark is inset with ~42px of clearance at
-  # 400x400 — the circle cannot clip it. The rest of the build carries no
-  # portrait either: the vCard (src/lib/vcard.ts) has no PHOTO property, the
-  # Open Graph image (src/pages/og.png.ts) is drawn from theme tokens and text
-  # only, and the favicon/app icons are rasterized from public/favicon.svg.
+  # the avatar is the CWT Group mark on a white square. The mark alone, without
+  # the "Precision Welding Services" line — the avatar renders at 96px, where
+  # that strapline is an unreadable smudge and dropping it lets the wordmark
+  # itself sit ~10% larger. The avatar renders in a circle (object-cover), so
+  # the mark is inset with 29px of clearance at 400x400 — it cannot be clipped.
+  # The rest of the build carries no portrait either: the vCard
+  # (src/lib/vcard.ts) has no PHOTO property, the Open Graph image
+  # (src/pages/og.png.ts) is drawn from theme tokens and text only, and the
+  # favicon/app icons are rasterized from public/favicon.svg.
   avatar: /tom.png # public/tom.png
   location: Kettering, Northants, UK
 
