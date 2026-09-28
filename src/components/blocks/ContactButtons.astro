@@ -30,10 +30,19 @@ if (block.signal) buttons.push({ href: `https://signal.me/#p/${block.signal}`, l
 if (email) buttons.push({ href: `mailto:${email}`, label: "Email", icon: "mail" });
 
 const external = (href: string) => /^https?:\/\//i.test(href);
+
+// LOCAL PATCH, diverges from upstream LibCard. Upstream hard-codes
+// `sm:grid-cols-3`, so a card carrying only Call and Email gets a three-column
+// grid from 640px up: the two buttons fill two-thirds of the row and the last
+// column sits empty. Only reach for the third column once there is something to
+// put in it. Matches the house card at johnsilvaeng.github.io/card, which
+// carries the same patch. Note src/** is replaceable engine per AGENTS.md —
+// `pnpm run update` will revert this.
+const gridClass = `grid w-full grid-cols-2 gap-2${buttons.length > 2 ? " sm:grid-cols-3" : ""}`;
 ---
 {
   buttons.length > 0 && (
-    <div class="grid w-full grid-cols-2 gap-2 sm:grid-cols-3">
+    <div class={gridClass}>
       {buttons.map((b) => (
         <a
           href={b.href}
